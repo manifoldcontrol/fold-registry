@@ -1,0 +1,20 @@
+name: ci
+on:
+  push: { branches: [main] }
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: registry builds clean against the pinned PDF
+        run: |
+          python3 csr/tools/csr.py --root csr build
+          grep -q "Errors: 0, Warnings: 0" csr/build/CSR.validation.txt
+      - name: drift detection guards the paper
+        run: |
+          printf '\n' >> docs/Fold_Bifurcation_v67.pdf
+          python3 csr/tools/csr.py --root csr build
+          test "$(grep -c CSR004 csr/build/CSR.validation.txt)" -ge 19
