@@ -1,0 +1,9 @@
+# vocabulary_disambiguation.csr -- terms that have multiple registered senses
+#
+#   vocabulary_disambiguation my_term:
+#     term: "my_term"
+#     senses:
+#       - sense: sense_a
+#         home: csr.<Namespace>.my_term_sense_a
+#       - sense: sense_b
+#         home: csr.<Namespace>.my_term_sense_b

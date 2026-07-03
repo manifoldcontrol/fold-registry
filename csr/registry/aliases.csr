@@ -1,0 +1,7 @@
+# aliases.csr -- declared alias relationships
+#
+# Use sparingly. Aliases assert that two ids refer to the same object.
+#
+#   alias csr.<Namespace>.old_name -> csr.<Namespace>.canonical_symbol
+#
+# (One-liner arrow form; the parser does not accept block-form alias entries.)

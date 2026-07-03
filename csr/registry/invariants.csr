@@ -1,0 +1,7 @@
+# invariants.csr -- registered structural invariants
+#
+#   invariant my_invariant:
+#     id: csr.invariant.my_invariant
+#     status: canonical
+#     scope: cross_namespace
+#     statement: "..."

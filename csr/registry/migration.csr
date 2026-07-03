@@ -1,0 +1,5 @@
+# migration.csr -- schema migrations applied to this registry
+#
+#   migration v0_to_v1:
+#     applied: YYYY-MM-DD
+#     summary: "..."

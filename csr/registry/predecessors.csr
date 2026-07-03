@@ -1,0 +1,5 @@
+# predecessors.csr -- supersession edges between symbols/documents
+#
+#   predecessor my_old_symbol:
+#     id: csr.<Namespace>.my_old_symbol
+#     superseded_by: csr.<Namespace>.my_new_symbol

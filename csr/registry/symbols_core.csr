@@ -1,0 +1,30 @@
+# symbols_core.csr -- general-purpose symbol bucket
+#
+# For symbols that don't yet warrant a dedicated namespace file.
+# Once a namespace accumulates ~5+ symbols, lift it into its own
+# registry/<Namespace>.csr file (see CLAUDE.md for the pattern).
+#
+# Minimal symbol entry:
+#
+#   symbol my_symbol:
+#     id: csr.<Namespace>.my_symbol
+#     namespace: <Namespace>
+#     framework_layer: domain         # algebra | cross_layer | domain | procedure | registry | representation
+#     owning_document: csr.document.<Doc>
+#     display_name: my symbol
+#     type: concept                   # concept | operator | structure | schema | axiom | theorem | predicate | open_problem
+#     status: candidate
+#     definition_home: csr.document.<Doc>@v0#section.1.my_symbol
+#     definition: "..."
+#     definition_hash: auto
+#     source_anchor:
+#       document: csr.document.<Doc>
+#       version: v0
+#       section: "1"
+#       anchor: my_symbol
+#       source_hash: auto
+#       section_hash: auto
+#     verification:
+#       state: argued                 # declared | argued | tested | formalized | proved
+#       method: prose                 # prose | empirical | theorem | simulation | Lean | compiler_check
+#       last_verified: YYYY-MM-DD

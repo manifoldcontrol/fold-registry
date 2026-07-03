@@ -1,0 +1,52 @@
+# documents.csr -- document registry index
+#
+# Append one `document <Name>:` block per document. Minimal entry:
+#
+#   document MyDoc:
+#     id: csr.document.MyDoc
+#
+#     document_class: framework        # see CLAUDE.md for class taxonomy
+#     namespace: MyDoc                 # namespace for this doc's symbols
+#     display_name: "My document"
+#     version: v0
+#     status: candidate                # draft | candidate | provisional | canonical | deprecated | rejected | deferred
+#     source_path: relative/path/to/source.tex
+#     defines: []
+#     publication_mode: internal       # internal | external
+#     last_verified: YYYY-MM-DD
+#
+# A document with no source_path triggers CSR023; declare one if the source
+# file exists.
+
+
+
+document Fold_Paper:
+  id: csr.document.Fold_Paper
+  document_class: framework
+  namespace: Fold
+  display_name: "A singular fold model for capacity-constrained dynamics (v67; prior version on Zenodo)"
+  version: v67
+  status: provisional
+  source_path: docs/Fold_Bifurcation_v67.pdf
+  defines:
+    - csr.Fold.fast_subsystem
+    - csr.Fold.slow_vector_field
+    - csr.Fold.friction_coupling
+    - csr.Fold.congestion_regime
+    - csr.Fold.barrier_function
+    - csr.Fold.slow_manifold_tube
+    - csr.Fold.prop1_saddle_node
+    - csr.Fold.prop2_friction_divergence
+    - csr.Fold.prop3_barrier_monotonicity
+    - csr.Fold.criterion1_boundedness
+    - csr.Fold.prop4_local_stability
+    - csr.Fold.theorem1_fold_repulsion
+    - csr.Fold.prop5_isolating_block
+    - csr.Fold.corollary1_rated_exit
+    - csr.Fold.csd_predictions
+    - csr.Fold.open_uniform_delta
+    - csr.Fold.open_basin_overlap
+    - csr.Fold.open_krupa_szmolyan
+    - csr.Fold.open_blowup_regularisation
+  publication_mode: external
+  last_verified: 2026-07-02
