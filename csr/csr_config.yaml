@@ -1,0 +1,48 @@
+# csr_config.yaml -- paths and runtime configuration for the CSR compiler.
+#
+# v0.1 status: design spec only. The compiler does NOT yet read this file.
+# v0.2 will wire csr_compile.py and csr_extract.py to read from here.
+# For v0.1, the compiler uses hardcoded defaults equivalent to the values below.
+#
+# To update paths in v0.1, edit tools/csr_extract.py (the PF_ROOT_FROM_CSR constant) and
+# tools/csr_compile.py (the build_dir relative-walk on line ~3443) directly.
+
+paths:
+  # How many parent directories to walk up from csr/ to reach the corpus root.
+  # Default 2 assumes layout: corpus_root/<subdir>/csr/   (csr/ -> <subdir>/ -> corpus_root/)
+  # Use 0 if csr/ sits at the corpus root.
+  corpus_root_levels_up: 2
+
+  # Where build artifacts go (relative to csr/).
+  build_dir: build
+
+  # Where the audit log is written.
+  edit_log: csr_edit_log.jsonl
+
+  # Registry source glob (relative to csr/).
+  registry_glob: registry/*.csr
+
+  # Optional notation specification document. If set, the compiler uses
+  # this document's notation table to seed CSR027 reserved-letter checks.
+  # Leave null to use the static defaults in csr_schema.yaml.
+  notation_spec_doc_id: null
+
+# Build options
+build:
+  # Render HTML registry view (build/CSR.registry.html).
+  render_html: true
+
+  # Render Graphviz dependency DOT (build/CSR.dependencies.dot).
+  render_dependency_graph: true
+
+  # Render wiki-style consolidated view (build/CSR.wiki.md).
+  render_wiki: true
+
+  # Repack tools/ -> csr.pyz on every build (recommended).
+  repack_zipapp_on_build: true
+
+# Project metadata (for build artifact headers)
+project:
+  name: "CSR Seed"
+  version: "v0.1"
+  description: "Empty registry seeded for a new theory or framework."

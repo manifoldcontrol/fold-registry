@@ -1,0 +1,109 @@
+# csr_schema.yaml -- enums and validation policy.
+#
+# v0.1 status: design spec only. The compiler does NOT yet read this file.
+# v0.2 will wire csr_compile.py to load enums from here.
+# For v0.1, the values below mirror the hardcoded constants in
+# tools/csr_compile.py. To change them in v0.1, edit that file directly.
+
+status_taxonomy:
+  values:
+    - draft
+    - candidate
+    - provisional
+    - canonical
+    - deprecated
+    - rejected
+    - deferred
+  # Promotion is monotonic along the chain draft -> candidate -> provisional -> canonical.
+  # Terminal arms: deprecated, rejected, deferred.
+  promotion_rules:
+    canonical:
+      requires_verification_state_in: [argued, tested, formalized, proved]
+      requires_source_anchor: true
+
+framework_layers:
+  values:
+    - procedure
+    - algebra
+    - representation
+    - domain
+    - cross_layer
+    - registry
+  # Rename to `layers` in v0.2 (the term `framework_layer` is corpus-specific).
+
+symbol_types:
+  values:
+    - concept
+    - operator
+    - structure
+    - schema
+    - axiom
+    - theorem
+    - predicate
+    - open_problem
+
+verification:
+  states: [declared, argued, tested, formalized, proved]
+  methods: [prose, empirical, theorem, simulation, Lean, compiler_check]
+
+relations:
+  types:
+    - depends_on
+    - refines
+    - instantiates
+    - used_by
+    - conflicts_with
+    - equivalent_to
+    - contains
+    - component_of
+    - xref_only
+  cycle_error_set:    [depends_on, refines, instantiates, contains]
+  cycle_allowed_set:  [used_by, equivalent_to, conflicts_with, xref_only, supersedes, superseded_by, component_of]
+  symmetric:          [equivalent_to, conflicts_with, composes_with]
+  inverse_pairs:
+    contains: component_of
+    supersedes: superseded_by
+  # Status-of-target rules for depends_on
+  target_status_policy:
+    canonical:   allow
+    provisional: allow
+    candidate:   allow
+    draft:       warn
+    deprecated:  warn_unless_successor
+    rejected:    error
+    deferred:    error
+
+notation:
+  # Plain Latin capitals reserved by corpus convention.
+  # A symbol claiming one in `notation.symbols_used` without
+  # `convention_status: convention_adapted` or `aesthetic_override`
+  # triggers a CSR027 warning.
+  #
+  # Default empty set: no letters are reserved. Add letters as your
+  # framework adopts conventions for them.
+  #
+  # The source deployment used {A, V, G, O, F, K, L} (typical Latin
+  # capitals reserved by mathematical convention for slots in a configuration
+  # tuple). Reproduce here if it matches your conventions; otherwise leave
+  # empty (CSR027 will then no-op until you decide on letter assignments).
+  reserved_plain_capitals: []
+
+  # Allowed values for the `convention_status` field on a symbol.
+  convention_statuses:
+    - convention_aligned
+    - convention_adapted
+    - framework_original
+    - aesthetic_override
+    - divergent_pending_rename
+
+  # convention_status values that suppress CSR027 for a claimed letter.
+  protected_convention_statuses:
+    - convention_adapted
+    - aesthetic_override
+
+# Diagnostic severity overrides (optional).
+# Maps a CSR code to error, warn, or info to override the compiler default.
+diagnostic_overrides: {}
+  # Example:
+  # CSR025: warn      # downgrade prose_version_embed to warning
+  # CSR027: info      # downgrade notation_collision_check to informational

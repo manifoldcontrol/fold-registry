@@ -1,0 +1,20 @@
+# Per-document bump policy.
+#
+# mode:
+#   classify   ; watcher classifies diffs as patch or minor; major requires sentinel
+#   patch_all  ; every detected change is a patch (no minor auto-promotion)
+#   hold       ; watcher does not bump; only compiles
+#
+# major bumps always require an operator sentinel file:
+#   touch .bump-MAJOR.<doc_id>
+# placed alongside the source file.
+#
+# New docs use the default unless an override is added under `policies:`.
+
+default:
+  mode: classify
+
+policies:
+  # Add per-document overrides here. Examples:
+  #   MyDoc: patch_all
+  #   MyNote: hold
