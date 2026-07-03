@@ -1,11 +1,11 @@
 """
-corpus_dump.py — concatenate every registered document into a single .md.
+corpus_dump.py - concatenate every registered document into a single .md.
 
 Walks all csr/registry/*.csr files, finds each `document` block, reads the
 source file from `source_path`, and emits a single Markdown artifact where
 each document is a chapter with YAML frontmatter carrying its CSR metadata.
 
-Output: build/Corpus_Dump.md (default) — self-describing, greppable,
+Output: build/Corpus_Dump.md (default) - self-describing, greppable,
 LLM-ingestible. Raw LaTeX math passes through as-is.
 
 Usage:
@@ -120,7 +120,7 @@ def read_source(pf_root: Path, source_path: str) -> tuple[str, str | None]:
         return "", f"source file not found: {source_path}"
     if p.suffix == ".docx":
         # Skip binary; just note its presence
-        return f"[binary .docx file at {source_path} — not inlined in dump]", None
+        return f"[binary .docx file at {source_path} - not inlined in dump]", None
     try:
         with open(p, "r", encoding="utf-8", errors="replace") as f:
             return f.read(), None
@@ -251,7 +251,7 @@ def main() -> int:
             parts.append(content.rstrip())
             parts.append("```")
         else:
-            # md, txt, etc — let through as-is
+            # md, txt, etc - let through as-is
             parts.append(content.rstrip())
 
     output_path.write_text("\n".join(parts) + "\n", encoding="utf-8")

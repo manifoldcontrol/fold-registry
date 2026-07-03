@@ -2504,7 +2504,7 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
             _render_doc_entry(d)
         out.append('</details>')
 
-    # Symbols by namespace — salience-first (AestheticOperator §4):
+    # Symbols by namespace - salience-first (AestheticOperator §4):
     # ID + badge + definition + Open PDF at top; full metadata in collapsed
     # <details> below to keep V (visual density) bounded.
     out.append('<h2 id="symbol-registry">Symbol Registry</h2>')
@@ -2522,7 +2522,7 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
             if s.definition:
                 preview = s.definition[:90]
                 if len(s.definition) > 90:
-                    preview = preview.rstrip(" ,;:.—-") + "…"
+                    preview = preview.rstrip(" ,;:.--") + "…"
                 out.append(f' <span class="tag-gloss">{esc(preview)}</span>')
             if s.owning_document:
                 out.append(f' <span class="tag-action">{pdf_button(s.owning_document, "PDF")}</span>')
@@ -3355,7 +3355,7 @@ def validate_symbol_block_truncation(input_paths) -> List[Diagnostic]:
                 continue
             last_line = block[last_content_idx]
             # Mode (a): last content line of block doesn't look like a valid
-            # YAML termination — likely mid-word truncation.
+            # YAML termination - likely mid-word truncation.
             if not valid_termination_re.match(last_line):
                 diagnostics.append(Diagnostic(
                     code="CSR026",
@@ -3385,7 +3385,7 @@ def validate_symbol_block_truncation(input_paths) -> List[Diagnostic]:
                 continue
             # Mode (c): trailing content past last_verified
             if last_verified_idx >= 0:
-                # Flag trailing content only at symbol-field indent (<=2) — orphan
+                # Flag trailing content only at symbol-field indent (<=2) - orphan
                 # top-level pollution. Deeper-indented content is legitimate nested
                 # structure (e.g., evidence: under verification, source_anchor children).
                 for j in range(last_verified_idx + 1, len(block)):

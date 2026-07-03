@@ -1,5 +1,5 @@
 """
-csr_extract.py — extract source-document prose for registry entries.
+csr_extract.py - extract source-document prose for registry entries.
 
 Given a CSR locator like
     csr.document.MyDoc@v1.0#section.3.2.my_symbol
@@ -612,7 +612,7 @@ def latex_to_html(text: str) -> str:
             timeout=15,
         )
     except (FileNotFoundError, subprocess.TimeoutExpired) as exc:
-        # Pandoc unavailable or hung — degrade to a minimal regex pass that
+        # Pandoc unavailable or hung - degrade to a minimal regex pass that
         # at least strips the most common LaTeX commands.
         fb = _fallback_latex_to_html(text)
         _LATEX_TO_HTML_CACHE[text] = fb

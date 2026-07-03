@@ -426,7 +426,7 @@ def cmd_deps(args: argparse.Namespace) -> int:
             return 1
 
     edge_field = "used_by" if args.inverse else "depends_on"
-    # composes_with is symmetric (per CSR spec §B.10) — always traversed in
+    # composes_with is symmetric (per CSR spec §B.10) - always traversed in
     # both forward and inverse modes. Edges appear in both directions in
     # lock.json after the auto-symmetrise pass in csr_compile.derive_inverses().
     extra_symmetric_edges = ["composes_with"]
