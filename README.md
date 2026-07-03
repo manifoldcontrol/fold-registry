@@ -25,4 +25,4 @@ open csr/build/CSR.registry.html
 
 ## why
 
-names shift across revisions, conditions get added, a "proved" becomes "proved on the reduced flow". the registry gives every claim one identity, one definition home, one verification state, and makes the diff between what was checked and what the file now says mechanically visible.
+names shift across revisions, conditions get added, a "proved" becomes "proved on the reduced flow". the registry gives every claim one identity, one definition home, and one verification state, so the diff between what was checked and what the file now says is a build step, not a manual read.
