@@ -1,47 +1,28 @@
 # fold-registry
 
-The claim registry for *A Singular Fold Model for Capacity-Constrained
-Dynamics* (v67) — a mathematics preprint whose **Claim Status table is
-machine-readable and drift-detected**.
+the claim registry for *a singular fold model for capacity-constrained dynamics* (v67), a mathematics preprint whose claim status table is machine-readable and drift-detected.
 
-The paper opens with a table stating, per claim, exactly what is proved,
-proved-conditionally, or open. This repo maintains that table as a
-[csr-seed](https://github.com/manifoldcontrol/csr-seed) registry: 19 symbols across the paper's definitions,
-8 proved results, 1 conditional result, and 4 explicitly-open problems, with
-real dependency edges (Corollary 1 `depends_on` Theorem 1 + Proposition 5)
-and sha256 pins against the deposited PDF.
+the paper opens with a table stating, per claim, exactly what is proved, proved-conditionally, or open. this repo maintains that table as a [csr-seed](https://github.com/manifoldcontrol/csr-seed) registry: 19 symbols across the paper's definitions, 8 proved results, 1 conditional result, and 4 explicitly-open problems, with dependency edges (corollary 1 depends on theorem 1 + proposition 5) and sha256 pins against the pdf.
 
-## What you can ask it
+## use
 
 ```bash
+pip install pyyaml
 python3 csr/tools/csr.py --root csr build
-open csr/build/CSR.registry.html          # browsable claim wiki
+open csr/build/CSR.registry.html
 ```
 
-- Which results are proved, by what method, verified when?
-  (`verification: state/method` per symbol; open problems are
-  `type: open_problem`.)
-- What does Corollary 1 depend on? (`csr/build/CSR.dependencies.dot`)
-- **Has the paper changed since a claim was verified?** Hashes are pinned
-  against `docs/Fold_Bifurcation_v67.pdf`; any byte change flags every
-  affected claim with a CSR004 diagnostic until re-verified and re-pinned.
-  A revision can no longer silently invalidate a downstream reader's trust.
+- which results are proved, by what method, verified when: `verification: state/method` per symbol; open problems are `type: open_problem`
+- what does corollary 1 depend on: `csr/build/CSR.dependencies.dot`
+- has the paper changed since a claim was verified: hashes are pinned against `docs/Fold_Bifurcation_v67.pdf`; any byte change flags every affected claim with a CSR004 diagnostic until re-verified and re-pinned
 
-## Provenance
+## provenance
 
-- Paper: James Kovalenko, June 2026. Preprint, not peer reviewed; an earlier
-  version is deposited on Zenodo (DOI for v67 to be added on deposit —
-  hashes will then re-pin against the published artifact byte-for-byte).
-- Registry tooling vendored from [csr-seed](https://github.com/manifoldcontrol/csr-seed) v0.1.
-- Hash granularity is document-level in this version: any change to the PDF
-  flags all 19 claims. Per-section pinning is the planned refinement.
-- Section anchors (`prop1`, `open_blowup`, ...) are registry-side tokens
-  keyed to the paper's numbered sections, not PDF-internal anchors.
+- paper: james kovalenko, june 2026. preprint, not peer reviewed; an earlier version is on zenodo (v67 doi to be added on deposit)
+- registry tooling vendored from [csr-seed](https://github.com/manifoldcontrol/csr-seed) v0.1
+- hash granularity is document-level in this version: any change to the pdf flags all 19 claims. per-section pinning is the planned refinement
+- section anchors (`prop1`, `open_blowup`, ...) are registry-side tokens keyed to the paper's numbered sections, not pdf-internal anchors
 
-## Why publish a registry with a paper
+## why
 
-Sixty-seven revisions is the disease this treats: names shift, conditions
-get added, a "proved" becomes "proved on the reduced flow." The registry
-gives every claim one identity, one definition home, one honest verification
-state — and makes the diff between what reviewers checked and what the file
-now says mechanically visible.
+names shift across revisions, conditions get added, a "proved" becomes "proved on the reduced flow". the registry gives every claim one identity, one definition home, one verification state, and makes the diff between what was checked and what the file now says mechanically visible.
