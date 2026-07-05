@@ -1857,13 +1857,13 @@ def _pdf_link_for_document(doc_id, target_section="", reg=None, corpus_root=None
         root = _P(corpus_root)
         for c in candidates:
             if (root / c).exists():
-                return f"../../../{c}"
+                return f"../../{c}"
         return ""
 
     # Legacy fallback (no existence check): use .pdf if .tex source, else original
     if rel_str.endswith(".tex"):
-        return f"../../../{base}.pdf"
-    return f"../../../{rel_str}"
+        return f"../../{base}.pdf"
+    return f"../../{rel_str}"
 
 
 def _render_minimal_markdown(text: str) -> str:
@@ -2334,12 +2334,19 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
     toc_lines.append('<input class="filter" id="toc-filter" placeholder="Filter symbols..." />')
     toc_lines.append('<h2>Sections</h2><ul>')
     # build-state moved into compact header; no separate TOC link
-    toc_lines.append('<li><a href="#document-registry">Document Registry</a></li>')
-    toc_lines.append('<li><a href="#preprint-registry">Preprint Registry</a></li>')
+    _has_internal_docs = any((d.publication_mode or 'internal') != 'external' for d in reg.documents)
+    _has_preprint_docs = any(d.publication_mode == 'external' for d in reg.documents)
+    if _has_internal_docs:
+        toc_lines.append('<li><a href="#document-registry">Document Registry</a></li>')
+    if _has_preprint_docs:
+        toc_lines.append('<li><a href="#preprint-registry">Preprint Registry</a></li>')
     toc_lines.append('<li><a href="#symbol-registry">Symbol Registry</a></li>')
-    toc_lines.append('<li><a href="#collisions">Known Collisions</a></li>')
-    toc_lines.append('<li><a href="#aliases">Aliases</a></li>')
-    toc_lines.append('<li><a href="#invariants">Invariants</a></li>')
+    if reg.collisions:
+        toc_lines.append('<li><a href="#collisions">Known Collisions</a></li>')
+    if reg.aliases:
+        toc_lines.append('<li><a href="#aliases">Aliases</a></li>')
+    if reg.invariants:
+        toc_lines.append('<li><a href="#invariants">Invariants</a></li>')
     toc_lines.append('</ul>')
     toc_lines.append('<h2>Symbols by namespace</h2>')
     for ns in sorted(by_ns):
@@ -2491,11 +2498,12 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
         out.append('</div>')
         out.append('</details>')
 
-    out.append(f'<details class="section" id="document-registry">')
-    out.append(f'<summary class="section-heading">Document Registry <span class="h2-count">({len(internal_docs)})</span></summary>')
-    for d in internal_docs:
-        _render_doc_entry(d)
-    out.append('</details>')
+    if internal_docs:
+        out.append(f'<details class="section" id="document-registry">')
+        out.append(f'<summary class="section-heading">Document Registry <span class="h2-count">({len(internal_docs)})</span></summary>')
+        for d in internal_docs:
+            _render_doc_entry(d)
+        out.append('</details>')
 
     if preprint_docs:
         out.append(f'<details class="section" id="preprint-registry">')
@@ -2566,7 +2574,8 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
         out.append('</details>')  # /section-ns
 
     # Collisions
-    out.append('<h2 id="collisions">Known Collisions</h2>')
+    if reg.collisions:
+        out.append('<h2 id="collisions">Known Collisions</h2>')
     for c in sorted(reg.collisions, key=lambda x: x.id):
         out.append(f'<h4>{esc(c.id)} {status_badge(c.status)}</h4>')
         out.append('<table>')
@@ -2582,7 +2591,8 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
             out.append(f'<div class="def">{esc(c.resolution_note)}</div>')
 
     # Aliases
-    out.append('<h2 id="aliases">Aliases</h2>')
+    if reg.aliases:
+        out.append('<h2 id="aliases">Aliases</h2>')
     if reg.aliases:
         out.append('<table><tr><th>Alias</th><th>Resolves to</th></tr>')
         for a in sorted(reg.aliases, key=lambda x: x.source):
@@ -2590,7 +2600,8 @@ body.sidebar-hidden .content { max-width: 66rem; padding-left: var(--sp-6); padd
         out.append('</table>')
 
     # Invariants
-    out.append('<h2 id="invariants">Invariants</h2>')
+    if reg.invariants:
+        out.append('<h2 id="invariants">Invariants</h2>')
     if reg.invariants:
         out.append('<table><tr><th>Invariant</th><th>Rule</th><th>Severity</th></tr>')
         for inv in sorted(reg.invariants, key=lambda x: x.name):
@@ -3096,7 +3107,8 @@ a.pdf-link:hover { background: var(--accent); color: #fff; }
                     pass
 
     # Collisions
-    out.append('<h2 id="collisions">Known Collisions</h2>')
+    if reg.collisions:
+        out.append('<h2 id="collisions">Known Collisions</h2>')
     for c in sorted(reg.collisions, key=lambda x: x.id):
         out.append(f'<h4>{esc(c.id)} {status_badge(c.status)}</h4>')
         out.append('<table>')
@@ -3113,7 +3125,8 @@ a.pdf-link:hover { background: var(--accent); color: #fff; }
             out.append(f'<div class="def">{esc(c.resolution_note)}</div>')
 
     # Aliases
-    out.append('<h2 id="aliases">Aliases</h2>')
+    if reg.aliases:
+        out.append('<h2 id="aliases">Aliases</h2>')
     if reg.aliases:
         out.append('<table>')
         out.append('<tr><th>Alias</th><th>Resolves to</th></tr>')
@@ -3124,7 +3137,8 @@ a.pdf-link:hover { background: var(--accent); color: #fff; }
         out.append('<p class="muted">(none)</p>')
 
     # Invariants
-    out.append('<h2 id="invariants">Invariants</h2>')
+    if reg.invariants:
+        out.append('<h2 id="invariants">Invariants</h2>')
     if reg.invariants:
         out.append('<table>')
         out.append('<tr><th>Invariant</th><th>Rule</th><th>Severity</th></tr>')
@@ -3471,7 +3485,7 @@ def compile_registry(input_paths, build_dir, compiled_at=""):
     # build_dir is <corpus_root>/<subdir>/csr/build by default; corpus_root
     # is build_dir.parent.parent.parent. Adjust if layout differs.
     try:
-        corpus_root = build_dir.resolve().parent.parent.parent
+        corpus_root = build_dir.resolve().parent.parent
     except Exception:
         corpus_root = None
     lockfile = emit_lockfile(reg, compiled_at=compiled_at)
