@@ -1,5 +1,5 @@
 # Fold.csr -- registry for "A singular fold model for capacity-constrained
-# dynamics" (v67). Machine-readable mirror of the paper's own Claim Status
+# dynamics" (v69). Machine-readable mirror of the paper's own Claim Status
 # table (Table 1): proved results carry state proved / method theorem; the
 # paper's explicitly-open items are type open_problem. One symbol, one
 # definition home; hashes pin the deposited PDF.
@@ -12,20 +12,20 @@ symbol fast_subsystem:
   display_name: "fast subsystem (saddle-node normal form)"
   type: structure
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.3.1.fast_subsystem
+  definition_home: csr.document.Fold_Paper@v69#section.3.1.fast_subsystem
   definition: "Fast dynamics in the smooth saddle-node normal form; the smooth half of the fast-slow decomposition."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "3.1"
     anchor: fast_subsystem
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol slow_vector_field:
   id: csr.Fold.slow_vector_field
@@ -35,20 +35,20 @@ symbol slow_vector_field:
   display_name: "slow vector field g(x) = alpha - beta*k/x"
   type: structure
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.3.1.slow_vector_field
+  definition_home: csr.document.Fold_Paper@v69#section.3.1.slow_vector_field
   definition: "Slow dynamics, singular at the boundary x = 0; the singularity is the model's distinguishing structural feature."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "3.1"
     anchor: slow_vector_field
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol friction_coupling:
   id: csr.Fold.friction_coupling
@@ -58,20 +58,20 @@ symbol friction_coupling:
   display_name: "friction coupling F(x) = k/x"
   type: structure
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.3.1.friction_coupling
+  definition_home: csr.document.Fold_Paper@v69#section.3.1.friction_coupling
   definition: "Coupling under which the friction-scaling law is derived; the exponent -1/2 is specific to this choice (F = k/x^a gives -a/2)."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "3.1"
     anchor: friction_coupling
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol congestion_regime:
   id: csr.Fold.congestion_regime
@@ -81,20 +81,20 @@ symbol congestion_regime:
   display_name: "congestion regime"
   type: concept
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.4.1.congestion_regime
+  definition_home: csr.document.Fold_Paper@v69#section.4.1.congestion_regime
   definition: "Region of the regime partition of the reduced slow flow on which barrier monotonicity and the repulsion results are stated."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "4.1"
     anchor: congestion_regime
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol barrier_function:
   id: csr.Fold.barrier_function
@@ -104,23 +104,23 @@ symbol barrier_function:
   display_name: "barrier function L(V) (Definition 1)"
   type: concept
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.4.2.barrier_function
+  definition_home: csr.document.Fold_Paper@v69#section.4.2.barrier_function
   definition: "L(V) = -F(x*(V)) on the attracting branch; fold-avoidance barrier whose monotonicity carries the admissibility argument."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "4.2"
     anchor: barrier_function
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.friction_coupling
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol slow_manifold_tube:
   id: csr.Fold.slow_manifold_tube
@@ -130,20 +130,20 @@ symbol slow_manifold_tube:
   display_name: "slow-manifold tube"
   type: concept
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.5.1.slow_manifold_tube
+  definition_home: csr.document.Fold_Paper@v69#section.5.1.slow_manifold_tube
   definition: "Neighbourhood of the attracting slow manifold on which the Lyapunov and isolating-block certificates are constructed."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "5.1"
     anchor: slow_manifold_tube
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol prop1_saddle_node:
   id: csr.Fold.prop1_saddle_node
@@ -153,23 +153,23 @@ symbol prop1_saddle_node:
   display_name: "Prop. 1: saddle-node bifurcation of the fast subsystem"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.3.2.prop1
+  definition_home: csr.document.Fold_Paper@v69#section.3.2.prop1
   definition: "Saddle-node bifurcation of the fast subsystem. Proved; standard normal-form verification."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "3.2"
     anchor: prop1
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.fast_subsystem
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol prop2_friction_divergence:
   id: csr.Fold.prop2_friction_divergence
@@ -179,16 +179,16 @@ symbol prop2_friction_divergence:
   display_name: "Prop. 2: conditional friction divergence F ~ (Q-V)^(-1/2)"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.4.2.prop2
+  definition_home: csr.document.Fold_Paper@v69#section.4.2.prop2
   definition: "Friction-scaling law along the attracting branch. Proved, CONDITIONAL on the coupling F(x) = k/x; exponent is model-dependent."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "4.2"
     anchor: prop2
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.friction_coupling
@@ -196,7 +196,7 @@ symbol prop2_friction_divergence:
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol prop3_barrier_monotonicity:
   id: csr.Fold.prop3_barrier_monotonicity
@@ -206,16 +206,16 @@ symbol prop3_barrier_monotonicity:
   display_name: "Prop. 3: barrier monotonicity on the congestion regime"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.4.2.prop3
+  definition_home: csr.document.Fold_Paper@v69#section.4.2.prop3
   definition: "Monotonicity of L(V) on the congestion regime of the reduced slow flow, restricted to the attracting branch."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "4.2"
     anchor: prop3
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.barrier_function
@@ -223,7 +223,7 @@ symbol prop3_barrier_monotonicity:
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol criterion1_boundedness:
   id: csr.Fold.criterion1_boundedness
@@ -233,23 +233,23 @@ symbol criterion1_boundedness:
   display_name: "Crit. 1: boundedness equivalence"
   type: predicate
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.4.3.criterion1
+  definition_home: csr.document.Fold_Paper@v69#section.4.3.criterion1
   definition: "Structural equivalence on the reduced flow: bounded friction iff bounded-away-from-fold."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "4.3"
     anchor: criterion1
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.prop3_barrier_monotonicity
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol prop4_local_stability:
   id: csr.Fold.prop4_local_stability
@@ -259,20 +259,20 @@ symbol prop4_local_stability:
   display_name: "Prop. 4: local asymptotic stability of the cooperative equilibrium"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.5.6.prop4
+  definition_home: csr.document.Fold_Paper@v69#section.5.6.prop4
   definition: "Local asymptotic stability of (x0, V0) via Hurwitz linearisation and the Lyapunov indirect method."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "5.6"
     anchor: prop4
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol theorem1_fold_repulsion:
   id: csr.Fold.theorem1_fold_repulsion
@@ -282,16 +282,16 @@ symbol theorem1_fold_repulsion:
   display_name: "Thm. 1: Lyapunov decay and fold-repulsion funnel"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.5.4.theorem1
+  definition_home: csr.document.Fold_Paper@v69#section.5.4.theorem1
   definition: "Fold-repulsion and exit-time bound on strict congestion subsets of the full singular system, for every fixed delta > 0 with eps <= eps0(delta, r); weighted Lyapunov certificate removes the delta_min(r) threshold."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "5.4"
     anchor: theorem1
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.barrier_function
@@ -300,7 +300,7 @@ symbol theorem1_fold_repulsion:
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol prop5_isolating_block:
   id: csr.Fold.prop5_isolating_block
@@ -310,23 +310,23 @@ symbol prop5_isolating_block:
   display_name: "Prop. 5: isolating-block certificate for the whole tube"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.5.5.prop5
+  definition_home: csr.document.Fold_Paper@v69#section.5.5.prop5
   definition: "Face-flux computation: tube exit only through the cooperative-side face; covers all initial conditions in the slow-manifold tube."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "5.5"
     anchor: prop5
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.slow_manifold_tube
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol corollary1_rated_exit:
   id: csr.Fold.corollary1_rated_exit
@@ -336,16 +336,16 @@ symbol corollary1_rated_exit:
   display_name: "Cor. 1: rated exit for all tube initial conditions"
   type: theorem
   status: provisional
-  definition_home: csr.document.Fold_Paper@v67#section.5.6.corollary1
+  definition_home: csr.document.Fold_Paper@v69#section.5.6.corollary1
   definition: "Every congestion-tube trajectory exits the cooperative face without fold approach in explicit time ~ 1/(gamma0*mu0*delta*eps). Composition of Theorem 1 and Proposition 5."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "5.6"
     anchor: corollary1
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.theorem1_fold_repulsion
@@ -353,7 +353,7 @@ symbol corollary1_rated_exit:
   verification:
     state: proved
     method: theorem
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol csd_predictions:
   id: csr.Fold.csd_predictions
@@ -363,23 +363,23 @@ symbol csd_predictions:
   display_name: "fold-consistent CSD predictions"
   type: schema
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.8.3.csd_predictions
+  definition_home: csr.document.Fold_Paper@v69#section.8.3.csd_predictions
   definition: "Four distinguishing critical-slowing-down predictions derived from the fold structure; empirically testable, not theorems."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "8.3"
     anchor: csd_predictions
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.prop2_friction_divergence
   verification:
     state: argued
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol open_uniform_delta:
   id: csr.Fold.open_uniform_delta
@@ -389,23 +389,23 @@ symbol open_uniform_delta:
   display_name: "OPEN: uniform-in-delta certification at fixed eps"
   type: open_problem
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.8.2.open_uniform_delta
-  definition: "Joint limit delta -> 0 at fixed eps (the fold neighbourhood): eps0(delta, r) -> 0 as delta -> 0; requires blow-up resolution."
+  definition_home: csr.document.Fold_Paper@v69#section.8.2.open_uniform_delta
+  definition: "Uniform-in-delta certification at fixed epsilon (joint limit delta->0) remains open; epsilon_0(delta,r) -> 0 as delta -> 0. v68/v69: mechanism identified in the inner chart and extended as a formal sketch through the entry and exit charts (par. 6.2); rigorous closure open."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "8.2"
     anchor: open_uniform_delta
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.theorem1_fold_repulsion
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol open_basin_overlap:
   id: csr.Fold.open_basin_overlap
@@ -415,16 +415,16 @@ symbol open_basin_overlap:
   display_name: "OPEN: basin overlap of Prop. 4 and Thm. 1 regions"
   type: open_problem
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.8.2.open_basin_overlap
-  definition: "Explicit overlap between Proposition 4's basin and Theorem 1's certified region across V = V0 + r; needs Lyapunov-function scaling not pursued in v67."
+  definition_home: csr.document.Fold_Paper@v69#section.8.2.open_basin_overlap
+  definition: "Explicit overlap between Proposition 4's basin and Theorem 1's certified region across V = V0 + r; needs Lyapunov-function scaling not pursued in v69."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "8.2"
     anchor: open_basin_overlap
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.prop4_local_stability
@@ -432,7 +432,7 @@ symbol open_basin_overlap:
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol open_krupa_szmolyan:
   id: csr.Fold.open_krupa_szmolyan
@@ -442,23 +442,23 @@ symbol open_krupa_szmolyan:
   display_name: "OPEN: Krupa-Szmolyan jump-point classification"
   type: open_problem
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.8.2.open_krupa_szmolyan
-  definition: "Standard Krupa-Szmolyan hypotheses fail at x = 0 because of the 1/x singularity; classification not attempted."
+  definition_home: csr.document.Fold_Paper@v69#section.8.2.open_krupa_szmolyan
+  definition: "Krupa-Szmolyan jump-point classification: standard hypotheses fail at x = 0. v69: the chart fields, spectra, and transition maps are in place (par. 6.1); the classification still requires centre-manifold arguments at the partially hyperbolic divisor equilibria, rigorous matching, and time bookkeeping."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "8.2"
     anchor: open_krupa_szmolyan
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.slow_vector_field
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
 
 symbol open_blowup_regularisation:
   id: csr.Fold.open_blowup_regularisation
@@ -468,20 +468,20 @@ symbol open_blowup_regularisation:
   display_name: "OPEN: full-divisor blow-up regularisation of the 1/x singularity"
   type: open_problem
   status: candidate
-  definition_home: csr.document.Fold_Paper@v67#section.8.2.open_blowup
-  definition: "Not attempted in v67; the paper records what a resolution would require. Prerequisite for the uniform-in-delta result."
+  definition_home: csr.document.Fold_Paper@v69#section.8.2.open_blowup
+  definition: "v69: full chart atlas and transition maps derived and computer-algebra verified (par. 6.1); inner chart solved in closed form (par. 6); matching, alpha-correction, and time bookkeeping sketched (par. 6.2-6.3), not rigorous. Still open: centre-manifold existence through the blow-up, uniform transient bounds, time asymptotics. Prerequisite for the uniform-in-delta result."
   definition_hash: auto
   source_anchor:
     document: csr.document.Fold_Paper
-    version: v67
+    version: v69
     section: "8.2"
     anchor: open_blowup
-    source_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
-    section_hash: sha256:d21f1b5872167c9c25bb2ac77067c23482039ad80cb6147e181797c543dc788c
+    source_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
+    section_hash: sha256:9bdf000b881c246aabb32006be365881c70745b98d832f69629d6869ed737fa8
   relations:
     depends_on:
       - csr.Fold.slow_vector_field
   verification:
     state: declared
     method: prose
-    last_verified: 2026-07-02
+    last_verified: 2026-07-07
