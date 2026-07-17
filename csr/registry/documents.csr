@@ -24,10 +24,10 @@ document Fold_Paper:
   id: csr.document.Fold_Paper
   document_class: framework
   namespace: Fold
-  display_name: "A singular fold model for capacity-constrained dynamics (v69; prior version on Zenodo)"
-  version: v69
+  display_name: "A singular fold model for capacity-constrained dynamics (v74; prior version on Zenodo)"
+  version: v74
   status: provisional
-  source_path: docs/Fold_Bifurcation_v69.pdf
+  source_path: docs/Fold_Bifurcation_v74.pdf
   defines:
     - csr.Fold.fast_subsystem
     - csr.Fold.slow_vector_field
@@ -48,5 +48,6 @@ document Fold_Paper:
     - csr.Fold.open_basin_overlap
     - csr.Fold.open_krupa_szmolyan
     - csr.Fold.open_blowup_regularisation
+    - csr.Fold.kernel_certificate_layer
   publication_mode: external
-  last_verified: 2026-07-02
+  last_verified: 2026-07-17
