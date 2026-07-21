@@ -1,6 +1,6 @@
 # fold-registry
 
-Claim registry for **A Singular Fold Model for Capacity-Constrained Dynamics** (v74),
+Claim registry for **A Singular Fold Model for Capacity-Constrained Dynamics** (v75),
 a mathematics preprint by James Kovalenko. Not peer reviewed.
 
 ## the model
@@ -47,8 +47,9 @@ The paper is explicit about what it does not prove:
   and time bookkeeping are what is left.
 - **basin overlap** between Proposition 4's basin and Theorem 1's certified region.
 
-A subset of the finite certificate algebra carries Lean 4 kernel proofs (Appendix E):
-8 of 17 staged obligations kernel-checked, one accepted with standing withheld. The
+The finite certificate algebra carries Lean 4 kernel proofs (Appendix E): 16 of 17
+staged obligations kernel-checked as closed terms, the last (the window-cap
+biconditional) under statement audit after six consecutive search rejections. The
 invariant-manifold lemmas and the gluing borrow no authority from that layer.
 
 Four fold-consistent critical-slowing-down predictions and one barrier prediction (P5)
@@ -74,7 +75,7 @@ open csr/build/CSR.registry.html
 - dependency edges (Corollary 1 depends on Theorem 1 + Proposition 5):
   `csr/build/CSR.dependencies.dot`
 - pins are document-level in this version: any byte change to
-  `docs/Fold_Bifurcation_v74.pdf` flags every claim with a CSR004 diagnostic until it
+  `docs/Fold_Bifurcation_v75.pdf` flags every claim with a CSR004 diagnostic until it
   is re-verified and re-pinned. Per-section pinning is the planned refinement.
 - section anchors (`prop1`, `open_blowup`, …) are registry-side tokens keyed to the
   paper's numbered sections, not PDF-internal anchors.
@@ -82,4 +83,4 @@ open csr/build/CSR.registry.html
 ## provenance
 
 Paper: James Kovalenko, June 2026. Preprint, not peer reviewed; an earlier version is
-on Zenodo (v74 DOI to be added on deposit). Registry tooling vendored from csr-seed v0.1.
+on Zenodo (v75 DOI to be added on deposit). Registry tooling vendored from csr-seed v0.1.
