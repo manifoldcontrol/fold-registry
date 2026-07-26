@@ -1,6 +1,6 @@
 # fold-registry
 
-Claim registry for **A Singular Fold Model for Capacity-Constrained Dynamics** (v76),
+Claim registry for **A Singular Fold Model for Capacity-Constrained Dynamics** (v76.1),
 a mathematics preprint by James Kovalenko. Not peer reviewed.
 
 ## the model
@@ -75,7 +75,7 @@ open csr/build/CSR.registry.html
 - dependency edges (Corollary 1 depends on Theorem 1 + Proposition 5):
   `csr/build/CSR.dependencies.dot`
 - pins are document-level in this version: any byte change to
-  `docs/Fold_Bifurcation_v76.pdf` flags every claim with a CSR004 diagnostic until it
+  `docs/Fold_Bifurcation_v76.1.pdf` flags every claim with a CSR004 diagnostic until it
   is re-verified and re-pinned. Per-section pinning is the planned refinement.
 - section anchors (`prop1`, `open_blowup`, …) are registry-side tokens keyed to the
   paper's numbered sections, not PDF-internal anchors.
@@ -83,4 +83,4 @@ open csr/build/CSR.registry.html
 ## provenance
 
 Paper: James Kovalenko, June 2026. Preprint, not peer reviewed; an earlier version is
-on Zenodo (v76 DOI to be added on deposit). Registry tooling vendored from csr-seed v0.1.
+on Zenodo (v76.1 DOI to be added on deposit). Registry tooling vendored from csr-seed v0.1.
